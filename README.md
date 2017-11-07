@@ -11,7 +11,7 @@
 ## 问题诊断
 
 编译失败时，可以尝试手动逐次编译。
-结合文档 [README.pdf][README] 中的说明，有助于定位故障。
+结合文档 [thesis.pdf](./thesis.pdf) 中的说明，有助于定位故障。
 
     xelatex -no-pdf thesis
     biber --debug thesis
