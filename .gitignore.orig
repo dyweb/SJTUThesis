@@ -21,4 +21,8 @@ README.pdf
 *.xdv
 *.xml
 *.zip
+<<<<<<< HEAD
+*.gz
 hacks/
+=======
+>>>>>>> 0b165c8... A new cover solution for thesis of bachelor with vector logo
