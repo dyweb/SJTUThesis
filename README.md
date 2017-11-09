@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/badge/sharelatex-deprecated-lightgrey.svg)](https://www.sharelatex.com/templates/5a03fcddc4aab43a4a6226e2)
 
-这是为撰写上海交通大学学士、硕士或博士论文而准备的 XeLaTeX 模板，非官方出品。生成的学位论文文件参见 [thesis.pdf](./thesis.pdf)。
+这是为撰写上海交通大学学士、硕士或博士论文而准备的 XeLaTeX 模板，非官方出品。生成的学位论文文件参见 [document.pdf](./document.pdf)。
 
 **本项目是 [weijianwen/SJTUThesis](https://github.com/weijianwen/SJTUThesis) 的一个 Fork，由东岳工作室维护，不保证与上游的兼容性。**
 
@@ -22,7 +22,7 @@
 ## 问题诊断
 
 编译失败时，可以尝试手动逐次编译。
-结合文档 [thesis.pdf](./thesis.pdf) 中的说明，有助于定位故障。
+结合文档 [document.pdf](./document.pdf) 中的说明，有助于定位故障。
 
     xelatex -no-pdf thesis
     biber --debug thesis
