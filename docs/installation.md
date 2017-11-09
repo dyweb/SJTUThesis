@@ -30,7 +30,7 @@
 
 [Tex Gyre Termes](http://www.ctan.org/tex-archive/fonts/tex-gyre/fonts/opentype/public/tex-gyre) 英文字体可以自行安装。
 
-因为大部分操作系统对中文支持的方案都不同，因此本项目在 fonts/ 目录下有一套中文字体方案: 思源黑体, 思源宋体, Fandol 仿宋, Fandol 楷体。如果你不想安装字体可以直接使用 `fontset=source` 来使用预装好的字体。
+因为大部分操作系统对中文支持的方案都不同，因此本项目在 fonts/ 目录下有一套中文字体方案: 思源黑体, 思源宋体, Fandol 仿宋, Fandol 楷体。如果你不想安装中文字体可以直接使用 `fontset=source` 来使用预装好的字体。
 
 除此之外, 还有很多选择: 具体可以参考 [CTeX 宏集说明](http://mirrors.rit.edu/CTAN/language/chinese/ctex/ctex.pdf)
 
