@@ -6,6 +6,15 @@
 
 **本项目是 [weijianwen/SJTUThesis](https://github.com/weijianwen/SJTUThesis) 的一个 Fork，由东岳工作室维护，不保证与上游的兼容性。**
 
+## 论文效果
+
+<p align="center">
+      <a><img src="./docs/imgs/cover.png" width="300"></a>
+</p>
+<p align="center">
+      <a><img src="./docs/imgs/chap-1.png" width="300"></a>
+</p>
+
 ## 如何使用
 
 请参见 [docs/installation.md](docs/installation.md)。
