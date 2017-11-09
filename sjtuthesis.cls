@@ -716,4 +716,3 @@
 
 %%
 %% End of file `sjtuthesis.cls'.
-
