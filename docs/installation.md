@@ -35,7 +35,7 @@
 除此之外, 还有很多选择: 具体可以参考 [CTeX 宏集说明](http://mirrors.rit.edu/CTAN/language/chinese/ctex/ctex.pdf)
 
 <p align="center">
-      <a><img src="./imgs/ctex-fontset.png" weight=500></a>
+      <a><img src="./imgs/ctex-fontset.png" width="500"></a>
 </p>
 
 其中 fandol 是开源字体，建议使用。Adobe 的中文字体 AdobeSongStd, AdobeKaitiStd, AdobeHeitiStd, AdobeFangsongStd 等。因为涉及版权，如果要使用请自行下载。
