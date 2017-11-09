@@ -13,75 +13,52 @@
 本页面介绍如何在本地使用模板。
 
 * [环境配置](#环境配置)
-   * [Linux 系统](#linux-系统)
-      * [LaTeX 环境](#latex-环境)
-      * [字体问题](#字体问题)
-   * [Windows 系统](#windows-系统)
-      * [LaTeX 环境](#latex-环境-1)
-      * [字体问题](#字体问题-1)
-   * [MacOS 系统](#macos-系统)
-      * [LaTeX 环境](#latex-环境-2)
-      * [字体问题](#字体问题-2)
-* [模板获取](#模板获取)
-   * [终端中克隆最新版](#终端中克隆最新版)
-   * [压缩包下载](#压缩包下载)
+    * [字体](#字体)
+    * [LaTeX 环境](#latex-环境)
+        * [Linux](#linux)
+        * [Windows](#windows)
+        * [MacOS](#macos)
+* [终端中克隆最新版](#终端中克隆最新版)
 * [编译模板](#编译模板)
+* [字数统计](#字数统计)
 
 ## 环境配置
 
-### Linux 系统
+本项目需要依赖 XeLaTeX 进行编译，因此需要 LaTeX 的运行环境。除此之外，SJTUThesis 使用 [CTeX](https://www.ctan.org/pkg/ctex?lang=en) 提供中文支持，共需要五种字体，分别是一套英文字体，和宋体、仿宋、黑体、楷体四种中文字体。
 
-#### LaTeX 环境
+### 字体
 
-SJTUThesis 使用 XeLaTeX 进行编译，因此需要 LaTeX 的运行环境。[TeX Live](https://www.tug.org/texlive/) 是 TeX 及其相关程序在 GNU/Linux 及其他类 Unix 系统、Mac OS X 和 Windows 系统下的⼀套发⾏版，因此可以访问其主页进行安装，安装过程可参考 [TeX Live - Quick install](https://www.tug.org/texlive/quickinstall.html)。
+[Tex Gyre Termes](http://www.ctan.org/tex-archive/fonts/tex-gyre/fonts/opentype/public/tex-gyre) 英文字体可以自行安装。
 
-详细可查看 [TeX Live 安装指南](https://github.com/weijianwen/SJTUThesis/wiki/texlive-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)
+因为大部分操作系统对中文支持的方案都不同，因此本项目在 fonts/ 目录下有一套中文字体方案: 思源黑体, 思源宋体, Fandol 仿宋, Fandol 楷体。如果你不想安装字体可以直接使用 `fontset=source` 来使用预装好的字体。
 
-#### 字体问题
+除此之外, 还有很多选择: 具体可以参考 [CTeX 宏集说明](http://mirrors.rit.edu/CTAN/language/chinese/ctex/ctex.pdf)
 
-SJTUThesis 使用 [CTeX](https://www.ctan.org/pkg/ctex?lang=en) 提供中文支持，共需要五种字体，分别是一套英文字体，和宋体、仿宋、黑体、楷体四种中文字体。
+<p align="center">
+      <a><img src="./imgs/ctex-fontset.png" weight=500></a>
+</p>
 
-因为大部分 Linux 发行版对中文支持的方案都不同，因此推荐 Linux 用户在使用模板之前安装 [Fandol](https://www.ctan.org/pkg/fandol) 的四种中文字体（宋体、仿宋、黑体、楷体的正常体）和 [Tex Gyre Termes](http://www.ctan.org/tex-archive/fonts/tex-gyre/fonts/opentype/public/tex-gyre) 英文字体（斜体、粗体、正常体、粗斜体均需要下载安装）。
+其中 fandol 是开源字体，建议使用。Adobe 的中文字体 AdobeSongStd, AdobeKaitiStd, AdobeHeitiStd, AdobeFangsongStd 等。因为涉及版权，如果要使用请自行下载。
 
-Tex Gyre Termes 字体是遵循 [GUST Font Source License](http://www.ctan.org/license/gfsl) 的，而 Fandol 字体是开源在 [GNU Gen­eral Public Li­cense](https://www.gnu.org/licenses/licenses.html) 下的。可以避免由字体带来的版权问题。
+### LaTeX 环境
 
-除此之外，还有其他的字体选择，包括 Adobe 的中文字体 AdobeSongStd, AdobeKaitiStd, AdobeHeitiStd, AdobeFangsongStd 等。因为涉及版权，如果要使用请自行下载。
+#### Linux
 
-### Windows 系统
+推荐 Linux 用户使用。
 
-#### LaTeX 环境
+[TeX Live](https://www.tug.org/texlive/) 是 TeX 及其相关程序在 GNU/Linux 及其他类 Unix 系统、Mac OS X 和 Windows 系统下的⼀套发⾏版，因此可以访问其主页进行安装，安装过程可参考 [TeX Live - Quick install](https://www.tug.org/texlive/quickinstall.html)。
 
-SJTUThesis 使用 XeLaTeX 进行编译，因此需要 LaTeX 的运行环境，Windows 用户可以安装 [CTeX 套装（包含完整版 MiKTeX）](http://www.ctex.org/CTeXDownload)。此外，推荐使用 [Babun](http://babun.github.io/) 作为命令行终端。Babun 已默认安装有这些工具：git(用于版本控制)、GNUmake(用于编译控制)、perl(用于字数统计)。
+#### Windows
 
-详细可查看 [TeX Live 安装指南](https://github.com/weijianwen/SJTUThesis/wiki/texlive-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)
+[CTeX 套装（包含完整版 MiKTeX）](http://www.ctex.org/CTeXDownload)是基于 Windows 下的 MiKTeX 系统，集成了编辑器 WinEdt 和 PostScript 处理软件 Ghostscript 和 GSview 等主要工具。 CTeX 中文套装在 MiKTeX 的基础上增加了对中文的完整支持。 CTeX 中文套装支持 CJK, xeCJK, CCT, TY 等多种中文 TeX 处理方式。
 
-#### 字体问题
+同时推荐 Windows 用户使用 [Babun](http://babun.github.io/) 作为命令行终端。Babun 已默认安装有这些工具：git(用于版本控制)、GNUmake(用于编译控制)、perl(用于字数统计)。
 
-SJTUThesis 使用 [CTeX](https://www.ctan.org/pkg/ctex?lang=en) 提供中文支持，共需要五种字体，分别是一套英文字体，和宋体、仿宋、黑体、楷体四种中文字体。
+### MacOS
 
-Windows 系统有内置中文字体，可以直接使用。但需要安装 [Tex Gyre Termes](http://www.ctan.org/tex-archive/fonts/tex-gyre/fonts/opentype/public/tex-gyre) 英文字体（斜体、粗体、正常体、粗斜体均需要下载安装）。
+MacOS 用户可以安装 [MacTeX](https://www.tug.org/mactex/)。
 
-除此之外，还有其他的字体选择，包括 [Fandol](https://www.ctan.org/pkg/fandol) 和 Adobe 的中文字体等，如有需要请自行下载安装。
-
-### MacOS 系统
-
-#### LaTeX 环境
-
-SJTUThesis 使用 XeLaTeX 进行编译，因此需要 LaTeX 的运行环境，MacOS 用户可以安装 [MacTeX](https://www.tug.org/mactex/)。
-
-详细可查看 [TeX Live 安装指南](https://github.com/weijianwen/SJTUThesis/wiki/texlive-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)
-
-#### 字体问题
-
-MacOS 系统有内置中文字体，可以直接使用。但需要安装 [Tex Gyre Termes](http://www.ctan.org/tex-archive/fonts/tex-gyre/fonts/opentype/public/tex-gyre) 英文字体（斜体、粗体、正常体、粗斜体均需要下载安装）。
-
-除此之外，还有其他的字体选择，包括 [Fandol](https://www.ctan.org/pkg/fandol) 和 Adobe 的中文字体等，如有需要请自行下载安装。
-
-## 模板获取
-
-根据「系统需求」中情形选择适合你系统情况的分支，然后根据情况选择 git 克隆最新版代码或者下载稳定版压缩包。
-
-### 终端中克隆最新版
+## 终端中克隆最新版
 
 ```bash
 git clone https://github.com/dyweb/SJTUThesis.git
@@ -116,8 +93,6 @@ git pull upstream master
 %   submit                            % 定稿提交的论文，插入签名扫描版的原创性声明、授权声明
 % ]
 ```
-
-其中字体的选择要视系统字体的安装情况而定。其中 fandol 选项是使用 fandol 字体，founder 选项是使用方正字体，mac 选项是使用 macOS 系统自带字体，ubuntu 选项是使用 ubuntu 自带字体（有 bug，不推荐），windows 选项是使用 Windows 系统自带字体。
 
 随后编译模板，生成学位论文PDF文件。GNUMake将调用`latexmk`程序，自动完成模板的多轮编译。
 
