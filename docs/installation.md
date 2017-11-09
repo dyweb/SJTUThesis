@@ -1,3 +1,13 @@
+# 如何使用: 在线编译
+
+本项目可以使用 ShareLaTeX 在浏览器中进行编辑和论文的编译, 但因为模板发布需要 Pro 账号, 账号需要收费, 因此 ShareLaTex 模板不再维护
+
+## Latest Update: 2017/11/10
+
+模板地址: [https://www.sharelatex.com/templates/5a03fcddc4aab43a4a6226e2](https://www.sharelatex.com/templates/5a03fcddc4aab43a4a6226e2)
+
+项目地址: [https://www.sharelatex.com/project/5a03f5e84deb750e5512ccff](https://www.sharelatex.com/project/5a03f5e84deb750e5512ccff)
+
 # 如何使用: 本地编译
 
 本页面介绍如何在本地使用模板。
