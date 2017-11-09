@@ -1,6 +1,6 @@
 # 上海交通大学学位论文模板
 
-[![](https://img.shields.io/badge/sharelatex-supported-green.svg)](https://www.sharelatex.com/templates/5a03fcddc4aab43a4a6226e2)
+[![](https://img.shields.io/badge/sharelatex-deprecated-lightgrey.svg)](https://www.sharelatex.com/templates/5a03fcddc4aab43a4a6226e2)
 
 这是为撰写上海交通大学学士、硕士或博士论文而准备的 XeLaTeX 模板，非官方出品。生成的学位论文文件参见 [thesis.pdf](./thesis.pdf)。
 
