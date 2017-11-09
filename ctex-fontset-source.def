@@ -1,0 +1,17 @@
+% \defaultfontfeatures{Path = fonts/, Extension = .otf}
+
+\setCJKmainfont[Path = fonts/source-han-serif/, BoldFont=../source-han-sans/SourceHanSansSC-Bold,ItalicFont=SourceHanSerifSC-Regular]
+{SourceHanSerifSC-Regular}
+\setCJKsansfont[Path = fonts/source-han-sans/]{SourceHanSansSC-Regular}
+\setCJKmonofont[Path = fonts/source-han-serif/]{SourceHanSerifSC-Regular}
+
+\setCJKfamilyfont{zhsong}[Path = fonts/source-han-serif/]{SourceHanSerifSC-Regular}
+\setCJKfamilyfont{zhhei}[Path = fonts/source-han-sans/]{SourceHanSansSC-Regular}
+\setCJKfamilyfont{zhfs}[Path = fonts/fandol/]{FandolFang-Regular}
+\setCJKfamilyfont{zhkai}[Path = fonts/fandol/]{FandolKai-Regular}
+
+
+\newcommand*{\songti}{\CJKfamily{zhsong}} % 宋体
+\newcommand*{\heiti}{\CJKfamily{zhhei}}   % 黑体
+\newcommand*{\kaishu}{\CJKfamily{zhkai}}  % 楷书
+\newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋

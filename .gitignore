@@ -20,3 +20,4 @@ README.pdf
 *.fdb_latexmk
 *.zip
 *.gz
+hacks/
