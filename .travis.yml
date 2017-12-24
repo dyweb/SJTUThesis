@@ -1,14 +1,44 @@
+# NOTE:(at15) this is a direct copy from https://github.com/weijianwen/SJTUThesis/pull/222
+# by @AlexaraWu https://github.com/AlexaraWu
+# previous attempt by @gaocegege has failed
+os:
+  - linux
+
 sudo: required
-cache:
-    - apt
+
 install:
-    - sudo apt-get update -qq
-    - sudo apt-get install -y texlive texlive-xetex texlive-latex-extra latexmk xzdec
-    - tlmgr init-usertree
-    - tlmgr option repository ftp://tug.org/historic/systems/texlive/2013/tlnet-final 
-    - tlmgr install ctex
+  - REMOTE="http://mirror.ctan.org/systems/texlive/tlnet"
+  - INSTALL="/tmp/install-texlive"
+  - mkdir -p $INSTALL
+  - curl -sSL $REMOTE/install-tl-unx.tar.gz | tar -xzv -C $INSTALL --strip-components=1
+
+  - echo "selected_scheme scheme-basic" >> $INSTALL/tl.profile
+  - echo "collection-basic 1" >> $INSTALL/tl.profile
+  - echo "collection-bibtexextra 1" >> $INSTALL/tl.profile
+  - echo "collection-fontsextra 1" >> $INSTALL/tl.profile
+  - echo "collection-fontsrecommended 1" >> $INSTALL/tl.profile
+  - echo "collection-langchinese 1" >> $INSTALL/tl.profile
+  - echo "collection-latex 1" >> $INSTALL/tl.profile
+  - echo "collection-latexextra 1" >> $INSTALL/tl.profile
+  - echo "collection-latexrecommended 1" >> $INSTALL/tl.profile
+  - echo "collection-mathscience 1" >> $INSTALL/tl.profile
+  - echo "collection-xetex 1" >> $INSTALL/tl.profile
+  - echo "tlpdbopt_autobackup 0" >> $INSTALL/tl.profile
+  - echo "tlpdbopt_install_docfiles 0" >> $INSTALL/tl.profile
+  - echo "tlpdbopt_install_srcfiles 0" >> $INSTALL/tl.profile
+
+  - sudo $INSTALL/install-tl -profile $INSTALL/tl.profile
+
+  - VERSION=$($INSTALL/install-tl --version | grep 'version' | grep -o '[0-9]\{4\}')
+  - PLATFORM=$($INSTALL/install-tl --print-platform)
+  - TEXBIN="/usr/local/texlive/${VERSION}/bin/${PLATFORM}"
+  - export "PATH=$TEXBIN:$PATH"
+
+  - sudo $TEXBIN/tlmgr install latexmk ulem
+
+before_script:
+  - sed -i 's/,\s*fontset=\?\w*//' thesis.tex
+  - sed -i '/setmainfont/d' sjtuthesis.cls
+
 script:
-    - xelatex -no-pdf thesis
-    - biber --debug thesis
-    - xelatex thesis
-    - xelatex thesis
+  - make validate
